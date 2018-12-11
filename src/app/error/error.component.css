@@ -1,0 +1,52 @@
+.gif
+{
+  height: auto;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none;
+  color:#FFF;
+}
+
+gif:link {
+  text-decoration: none;
+}
+
+gif:visited {
+  text-decoration: none;
+}
+
+gif:hover {
+  text-decoration: underline;
+}
+
+gif:active {
+  text-decoration: none;
+}
+
+.btt{
+  text-align: center;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #28a1d2;
+  border-color: #28a1d2;
+  height: 40px;
+  width: 400px;
+  border-radius: 40px;    
+  font-size: 20px;
+}
+
+.btn-primary:hover { 
+  background-color:#FFF;
+  border-color: #28a1d2;
+  color: #6b7897;
+}
+
+.h2, h2 {
+  color: #6b7897;
+  font-size: 2rem;
+  margin: 20px;  
+}

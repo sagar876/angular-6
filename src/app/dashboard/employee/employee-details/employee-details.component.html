@@ -1,0 +1,98 @@
+<div class="center-div card" ng-style="myStyle" *ngIf="userData">
+  <img src="{{userData.profile_image}}" height="120px" width="120px">
+  <ul class="list-group">
+    <li class="list-group-item">
+      <label>
+        <b>name : </b>{{userData.user_name}}</label>
+    </li>
+    <li class="list-group-item">
+      <label>
+        <b>company</b> : {{userData.company}}</label>
+    </li>
+    <li class="list-group-item">
+      <label>
+        <b>DOB</b> : {{userData.d_o_b}}</label>
+    </li>
+    <li class="list-group-item">
+      <label>
+        <b>designation</b> : {{userData.designation}}</label>
+    </li>
+    <li class="list-group-item">
+      <label>
+        <b>Email</b> : {{userData.email}}</label>
+    </li>
+    <li class="list-group-item">
+      <label>
+        <b>user type</b>: {{userData.is_admin}}</label>
+    </li>
+    <li class="list-group-item">
+      <label>
+        <b>Mobile Number</b> : {{userData.mobile_number}}</label>
+    </li>
+    <li class="list-group-item">
+      <label>
+        <b>Blood Group</b> : {{userData.blood_group}}</label>
+    </li>
+    <li class="list-group-item">
+      <label>
+        <b>Emergency contact</b> : {{userData.emergency_contact}}</label>
+    </li>
+    <li class="list-group-item">
+      <label>
+        <b>Address</b> : {{userData.address}}</label>
+    </li>
+    <li class="list-group-item">
+      <div class="row">
+          <div class="col-md-6">
+              <b> Aadhar Card </b> :
+            </div>
+            <div class="col-md-6 notify">
+              <img src="../../../../assets//notify.png" *ngIf=!userData.aadhar_path (click)="onNotify(true)" height="27px" width="27px">
+              <a *ngIf= userData.aadhar_path href="{{userData.aadhar_path}}" download="AadharCard" target="_blank">
+                <img src="../../assets/pdf.png" height="30px" width="30px">
+              </a>
+            </div>
+      </div>      
+    </li>
+    <li class="list-group-item">
+        <div class="row">
+            <div class="col-md-6">
+                <b> PAN Card </b> :
+            </div>
+            <div class="col-md-6 notify">
+              <img src="../../../../assets//notify.png" *ngIf=!userData.aadhar_path (click)="onNotify(true)" height="27px" width="27px">
+              <a *ngIf= userData.PAN_path href="{{userData.PAN_path}}" download="pancard" target="_blank">
+                <img src="../../assets/pdf.png" height="30px" width="30px">
+              </a>
+            </div>
+        </div> 
+    </li>
+  </ul>
+  <form (submit)="onSubmit($event)" class="form">
+    <div class="form-group">
+      <label>Date of joining</label>
+      <input type="date" class="form-control" value={{userData.date_of_joining}}>
+    </div>
+    <div class="form-group">
+
+      <label>Reporting Manager </label>
+      <select class="selectpicker form-control">
+        <option selected="selected" value="{{userData.reporting_manager}}">{{userData.reporting_manager}}</option>
+        <option *ngFor="let item of adminUserList | async" value="{{item.user_name}}">{{item.user_name}}</option>
+      </select>
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" [checked]="isadmin" (change)="isadmin = !isadmin" />
+      <label class="form-check-label" ng-checked="checked">Mark As Admin</label>
+    </div>
+    <div>
+      <button type="submit" class="submitbtn btn btn-primary">Submit</button>
+
+    </div>
+  </form>
+  <div class="disable">
+    <button class="btn delete" *ngIf = isdeleted (click)="Disableuser()">Disable</button>
+    <button class="btn enable" *ngIf = !isdeleted (click)="Disableuser()">Enable</button>
+    <p class="textcondition" *ngIf = !isdeleted> * User has been Disabled click the above button to enable the user</p>
+  </div>
+</div>

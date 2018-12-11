@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="center-div card">
+        <p class="title">ANNOUNCEMENTS</p>
+        <hr>
+        <ul class="list-group">
+          <li *ngFor="let items of ann_data | async" class="list-group-item"  (click)="AnnouncementClicked(items)">
+            {{items.title}}
+            <img class="img m-2" [ngClass]="{'Announcement': items.type == 1,'Party': items.type == 0 , 'Sport': items.type == 2  , 'Attachment': items.type == 3}"
+              height="40px" width="40px">
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6" *ngIf= selectedData>
+      <div class="center-div card">
+        <app-announcement-detail [detail]= "selectedData"></app-announcement-detail>
+      </div>
+    </div>
+  </div>
+</div>

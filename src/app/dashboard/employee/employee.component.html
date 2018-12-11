@@ -1,0 +1,48 @@
+<div class="container-fluid main">
+  <div class="row">
+    <!-- <div class="sidepanel col-md-2" [ngClass]="{'active': sidebarVal === true }">
+      <div class="sidebar-inner">
+        <div>Home</div>
+        <div>Home</div>
+        <div>Home</div>
+        <div>Home</div>
+        <div>Home</div>
+        <div>Home</div>
+        <div>Home</div>
+      </div>
+    </div> -->
+    <!-- <button (click)="toggleSidebar()">click me</button>
+    <p>{{sidebarVal}}</p> -->
+    <!-- <div class="sidepanel col-md-2">
+    </div> -->
+    <div class="center-div card col-md-6" *ngIf=userDataList>
+      <div class="title">
+        <h3 class="heading">EMPLOYEES</h3>
+      </div>
+      <table class="table  table-hover">
+        <thead class="events_tbl">
+          <tr>
+            <th scope="col">Profile Image</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Mobile Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of userDataList | async; let i = index" (click)="setClickedRow(item.user_id)" [class.active]="i == selectedRow">
+            <td class="eventimage">
+              <img class="img" src="https://firebasestorage.googleapis.com/v0/b/roundaboutninestack.appspot.com/o/{{item.user_id}}%2fprofile_pic.jpg?alt=media"
+                height="40px" width="40px">
+            </td>
+            <td>{{item.user_name}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.mobile_number}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="details col-md-6">
+      <app-employee-details [selectedID]="encodedID"></app-employee-details>
+    </div>
+  </div>
+</div>

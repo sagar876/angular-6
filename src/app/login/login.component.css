@@ -1,0 +1,57 @@
+.main{
+    width: 100%;
+    height: 100%;
+    background:  #3C4858;
+}
+.center-div
+{
+  width: 800px;
+  height: auto;
+  border-radius: 3px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin: 51px 51px;
+  padding: 2%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.title{
+    margin-top: 20px;
+    color: #3C4858;
+    margin-bottom: 20px ;
+    width: 100%;
+    text-align:  center;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #28a1d2;
+    border-color: #28a1d2;
+    height: 45px;
+    width: 300px;
+    border-radius: 40px;    
+    font-size: 19px;
+  }
+
+.loginbtn{
+    text-align: center;
+    margin-top: 45px;
+}
+
+.title{
+    color: #364562;
+}
+
+.form-group
+{
+    margin-top: 40px;
+    font-size: 20px;
+}

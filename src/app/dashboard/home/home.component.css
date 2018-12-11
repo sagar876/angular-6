@@ -1,0 +1,75 @@
+.main{
+    background-color: #f2f5f8;
+}
+.center-div
+{
+  height: 500px;
+  border-radius: 3px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  padding: 2.5%;
+}
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.sidepanel{
+    height: auto;
+    background-color:#28a1d2;
+    /* position: fixed;
+    height: 100%;
+    left: -250px;
+    width: 250px;
+    -webkit-transition: width 0.5s; /* Safari 
+    transition: width 0.5s;*/
+}
+
+.title{
+    color: #6b7897;
+    font-size: 30px;
+}
+
+.hr{
+    color: #28a1d2;
+}
+
+.list-group-item{
+    border: 0px;
+    color: #6b7897;
+}
+.img.Party{
+    content: url("../../../assets/Party.png")
+}
+.img.Announcement{
+    content: url("../../../assets/Announcement.png")
+}
+.img.Sport{
+    content:url("../../../assets/Sport.png")
+}
+.img.Attachment{
+    content: url("../../../assets/Attachment.png")
+}
+
+.bdaylisting{
+    overflow: auto
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+   
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #28a1d2; 
+    border-radius: 50%;
+}
